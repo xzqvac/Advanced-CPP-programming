@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <cmath>
 
 namespace cpplab
 {
@@ -31,6 +32,24 @@ namespace cpplab
     // return asia;
     // }
 }
+
+namespace cpplab
+{
+    template <typename T, T side, int dimension>
+    class hyperqube
+    {
+    public:
+        constexpr T getVolume()
+        {
+            T volume = 0;
+            if (dimension > 0)
+                return volume = std::pow(side, dimension);
+            else
+                return -1;
+        }
+    };
+}
+
 
 int main(){
     const char* first = "String";
