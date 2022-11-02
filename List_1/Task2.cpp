@@ -36,18 +36,15 @@ namespace cpplab
     template<typename T>
     T &Vector<T>::operator[](size_t index)
     {
-//    try{
-//        if(index < size_)
-//            return data_[index];
-//        else
-//            throw(index);
-//    }
-//    catch (size_t num){
-//        std::cout << "Index: " << num << " is out of vector`s scope" << '\n';
-//    }
-//    //return data_[index];
-        if (index >= 0 && index < size_)
+    try{
+        if(index >= 0 < size_)
             return data_[index];
+        else
+            throw(index);
+    }
+    catch (size_t num){
+        std::cout << "Index: " << num << " is out of vector`s scope" << '\n';
+    }
     }
 
     template<typename T>
