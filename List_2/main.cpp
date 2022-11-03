@@ -50,13 +50,29 @@ namespace cpplab
     };
 }
 
+namespace cpplab{
+    template <typename T, typename... Types>
+    auto add_total(T first, Types... Last)
+    {
+        if constexpr (sizeof...(Last) == 0)
+            return first;
+        else
+            return first + add_total(Last...);
+    }
+}
+
+//https://www.geeksforgeeks.org/variadic-function-templates-c/
+
+
+
 
 int main(){
     const char* first = "String";
     const char* second = "Concaneated";
-    cpplab::sukces<const char*> (first);
-    cpplab::sukces<int> (5);
+//    cpplab::sukces<const char*> (first);
+//    cpplab::sukces<int> (5);
 
+    std::cout << cpplab::add_total(5.5, 2, 3.7);
     return 0;
 }
 
