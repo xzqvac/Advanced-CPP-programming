@@ -23,14 +23,14 @@ namespace cpplab
     {
         std::cout << x;
     }
-    // auto add(const char* x,const char* y)
-    // {
-    // char asia[80];
-    // strcpy(asia, x);
-    // strcat(asia, y);
-//
-    // return asia;
-    // }
+    auto add(const char* x,const char* y)
+    {
+    char asia[80];
+    strcpy(asia, x);
+    strcat(asia, y);
+        
+    return asia;
+    }
 }
 
 namespace cpplab
@@ -69,8 +69,13 @@ namespace cpplab{
 int main(){
     const char* first = "String";
     const char* second = "Concaneated";
-//    cpplab::sukces<const char*> (first);
-//    cpplab::sukces<int> (5);
+    cpplab::sukces<const char*> (first);
+    cpplab::sukces<int> (5);
+    
+    cpplab::hyperqube<int, 10, 2> cube;
+    static_assert (cube.getVolume() == 100, "Not ok");
+    std::cout << cube.getVolume() << '\n';
+    return 0;
 
     std::cout << cpplab::add_total(5.5, 2, 3.7);
     return 0;
