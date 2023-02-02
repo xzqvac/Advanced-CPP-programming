@@ -49,7 +49,7 @@ int main()
         {
             std::cerr << e.what() << "\n";
         }
-        
+        threads[i].join();        
     }
     
     std::cout << sumOfProducts << std::endl;
